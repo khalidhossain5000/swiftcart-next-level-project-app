@@ -65,6 +65,20 @@ const loadProductsByCategory = (category, index) => {
     })
 };
 
+// load single product data
+const loadProductDetails=(id)=>{
+    showLoader()
+    fetch(`https://fakestoreapi.com/products/${id}`)
+    .then((res)=>res.json())
+    .then((product)=>{
+        displayProductDetails(product)
+        showLoader()
+    })
+    .catch((err)=>console.log(err,'single product error here'))
+
+}
+
+// display cat
 const displayCategories = (categories) => {
   // get the container
   const categoryContainer = document.getElementById("category-container");
@@ -90,6 +104,7 @@ const displayProducts = (products) => {
   productContainer.innerHTML = "";
 
   for (const product of products) {
+    
     console.log(product,'this is producst')
     const div = document.createElement("div");
     div.innerHTML = `
@@ -119,7 +134,7 @@ const displayProducts = (products) => {
 
 <div class='flex justify-between items-end px-5 pt-6'>
 
-<button class='text-[#374254] px-6 cursor-pointer font-semibold py-1 border border-gray-500 rounded-xl'> <span><i class="fa-regular fa-eye"></i></span> Details </button>
+<button onclick="loadProductDetails('${product.id}')"class='text-[#374254] px-6 cursor-pointer font-semibold py-1 border border-gray-500 rounded-xl'> <span><i class="fa-regular fa-eye"></i></span> Details </button>
 
 <button class='px-6 cursor-pointer font-semibold py-1 bg-[#4f39f6] text-white rounded-xl'> <span><i class="fa-solid fa-cart-arrow-down"></i></span> Add </button>
 
@@ -138,7 +153,6 @@ const displayProducts = (products) => {
 
 
 // product details modal here code
-//display specific word details 
 
 
 const displayProductDetails=(productDetails)=>{
