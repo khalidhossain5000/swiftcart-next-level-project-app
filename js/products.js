@@ -58,7 +58,11 @@ const loadProductsByCategory = (category, index) => {
     .then((products) => {
       displayProducts(products);
       hideLoader();
-    });
+    })
+    .catch((error)=>{
+        console.log(error,'this is filter error ')
+        hideLoader();
+    })
 };
 
 const displayCategories = (categories) => {
@@ -86,12 +90,45 @@ const displayProducts = (products) => {
   productContainer.innerHTML = "";
 
   for (const product of products) {
+    console.log(product,'this is producst')
     const div = document.createElement("div");
     div.innerHTML = `
-            <div class="card bg-base-100 shadow-xl p-4 border">
-                <img src="${product.image}" class="h-40 mx-auto" alt="${product.title}" />
-                <h2 class="text-sm font-bold mt-2">${product.title.slice(0, 30)}...</h2>
-                <p class="text-red-500 font-bold">$${product.price}</p>
+            <div class="rounded-lg border border-[#e6e8eb]  pb-6 px-3 md:px-4 xl:px-0">
+                <div class='bg-[#e5e7eb] py-12'><img src="${product.image}" class="h-40 mx-auto" alt="${product.title}" /></div>
+
+
+                <div class='p-4'>
+
+<div class='flex justify-between items-center'> 
+
+<p class='bg-[#e0e7ff] rounded-full p-1 px-2 text-sm font-semibold text-[#4f39f6]'> ${product?.category}</p> 
+
+<p class=' text-lg text-[#c1c4cb] font-semibold'> <span class="text-[#fdc700]"> <i class="fa-solid fa-star"></i>  </span> ${product?.rating?.rate} (${product.rating?.count}) </p>
+
+
+
+</div>
+
+
+                <h2 class="text-[16px] pb-3 font-semibold text-[#000010] mt-2">${product?.title?.slice(0,30)}..</h2>
+                <p class="text-[#101840] font-bold text-[18px]">$${product?.price}</p>
+                </div>
+                
+
+
+
+<div class='flex justify-between items-end px-5 pt-6'>
+
+<button class='text-[#374254] px-6 cursor-pointer font-semibold py-1 border border-gray-500 rounded-xl'> <span><i class="fa-regular fa-eye"></i></span> Details </button>
+
+<button class='px-6 cursor-pointer font-semibold py-1 bg-[#4f39f6] text-white rounded-xl'> <span><i class="fa-solid fa-cart-arrow-down"></i></span> Add </button>
+
+
+</div>
+
+
+
+
             </div>
         `;
     productContainer.appendChild(div);
