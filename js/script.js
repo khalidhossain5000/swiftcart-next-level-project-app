@@ -1,27 +1,19 @@
-
 const showLoader = () => {
   document.getElementById("loader").classList.remove("hidden");
 };
 //hide loader
 const hideLoader = () => {
   document.getElementById("loader").classList.add("hidden");
-
 };
-
-
-
-
-
-
 
 // load trending products for home page
 const loadTrendingProducts = () => {
-    console.log('hello form tload trensind data here')
+  console.log("hello form tload trensind data here");
   showLoader();
   fetch("https://fakestoreapi.com/products")
     .then((res) => res.json())
     .then((products) => {
-        console.log(products,'trendingProductstrendingProducts')
+      console.log(products, "trendingProductstrendingProducts");
       const trendingProducts = products
         .sort((a, b) => b.rating.rate - a.rating.rate)
         .slice(0, 3);
@@ -35,11 +27,9 @@ const loadTrendingProducts = () => {
     });
 };
 
-
 //display trending products in home page
-const displayTrendingProducts=(trendingProducts)=>{
-    console.log(trendingProducts,'trendingProducts')
-      const trendingContainer = document.getElementById("trending-product");
+const displayTrendingProducts = (trendingProducts) => {
+  const trendingContainer = document.getElementById("trending-product");
   trendingContainer.innerHTML = "";
   for (const product of trendingProducts) {
     const div = document.createElement("div");
@@ -84,27 +74,53 @@ const displayTrendingProducts=(trendingProducts)=>{
         `;
     trendingContainer.appendChild(div);
   }
-}
+};
+
+// show details in modal over here
+// load single product data
+const loadProductDetails = (id) => {
+  showLoader();
+  fetch(`https://fakestoreapi.com/products/${id}`)
+    .then((res) => res.json())
+    .then((product) => {
+      displayProductDetails(product);
+      hideLoader();
+    })
+    .catch((err) => console.log(err, "single product error here"));
+};
+
+// product details modal here code
+
+const displayProductDetails = (productDetails) => {
+  console.log(productDetails, "productDetails");
+
+  document.getElementById("product_details_modal").showModal();
+  const modalContainer = document.getElementById("modal-container");
+  modalContainer.innerHTML = `
+     <!-- modal container  -->
+     <div class="bg-white py-8">
+      <!-- modal insides  -->
+       <div class="bg-gray-200 border-3 border-[#EDF7FF] p-6 space-y-6 w-full" >
 
 
+       <div class='bg-[#f8f8f8] rounded-lg shadow-lg shadow-blue-100 py-9'><img src="${productDetails.image}" class="h-40 xl:h-56 mx-auto" alt="${productDetails.title}" /></div>
 
 
+        <h2 class="text-4xl font-semibold text-black">Product Name: <span class="text-2xl">${productDetails.title}</span></h2>
 
+<p class="text-3xl font-semibold text-slate-900">Description: <span class="text-xl">${productDetails.description}</span></p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <h3 class="text-2xl font-semibold text-black">Category:${productDetails.category}</h3>
+        <h2 class="text-2xl font-semibold text-black">Price:$ ${productDetails.price}</h2>
+        <p  class="text-2xl font-normal text-[#000000]">Ratings:${productDetails.rating.rate}</p>
+        <p  class="text-2xl font-normal text-[#000000]">Ratings Count:${productDetails.rating.count}</p>
+       
+        
+        <div id="button-container" class="flex items-center gap-3"></div>
+        <button class='px-4 lg:px-6 cursor-pointer font-semibold py-1 bg-[#4f39f6] text-white rounded-xl'> <span><i class="fa-solid fa-cart-arrow-down"></i></span> Buy Now </button>
+       </div>
+     </div>
+    `;
+};
 
 loadTrendingProducts();
