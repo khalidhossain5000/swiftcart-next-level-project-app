@@ -134,6 +134,41 @@ const displayProducts = (products) => {
     productContainer.appendChild(div);
   }
 };
+
+
+
+// product details modal here code
+//display specific word details 
+
+
+const displayProductDetails=(productDetails)=>{
+    console.log(productDetails,'productDetails')
+
+    document.getElementById("product_details_modal").showModal();
+    const modalContainer=document.getElementById('modal-container');
+    modalContainer.innerHTML=`
+     <!-- modal container  -->
+     <div class="bg-white py-8">
+      <!-- modal insides  -->
+       <div class="bg-white border-3 border-[#EDF7FF] p-6 space-y-6 w-full" >
+        <h2 class="text-4xl font-semibold text-black">${productDetails.title}(<i class="fa-solid fa-microphone-lines"></i> : ${productDetails.description})</h2>
+        <h3 class="text-2xl font-semibold text-black">Meaning:</h3>
+        <h2 class="text-2xl font-semibold text-black">Example:</h2>
+        <p  class="text-2xl font-normal text-[#000000]">${productDetails.category}</p>
+        <h2 class="hind-siliguri text-2xl font-medium text-black">সমার্থক শব্দ গুলো:</h2>
+        
+        <div id="button-container" class="flex items-center gap-3"></div>
+       </div>
+     </div>
+    `
+}
+
+
+
+
+
+
+
 loadCategories();
 loadProducts();
 loadProductsByCategory("All");
