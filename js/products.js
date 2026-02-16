@@ -103,7 +103,7 @@ const displayProducts = (products) => {
   productContainer.innerHTML = "";
 
   for (const product of products) {
-    console.log(product, "this is producst");
+
     const div = document.createElement("div");
     div.innerHTML = `
             <div class="rounded-lg border border-[#e6e8eb]  pb-6 px-3 md:px-4 xl:px-0">
@@ -132,9 +132,9 @@ const displayProducts = (products) => {
 
 <div class='flex justify-between items-end px-5 pt-6'>
 
-<button onclick="loadProductDetails('${product.id}')"class='text-[#374254] px-6 cursor-pointer font-semibold py-1 border border-gray-500 rounded-xl'> <span><i class="fa-regular fa-eye"></i></span> Details </button>
+<button onclick="loadProductDetails('${product.id}')"class='text-[#374254] px-4 lg:px-6 cursor-pointer font-semibold py-1 border border-gray-500 rounded-xl'> <span><i class="fa-regular fa-eye"></i></span> Details </button>
 
-<button class='px-6 cursor-pointer font-semibold py-1 bg-[#4f39f6] text-white rounded-xl'> <span><i class="fa-solid fa-cart-arrow-down"></i></span> Add </button>
+<button class='px-4 lg:px-6 cursor-pointer font-semibold py-1 bg-[#4f39f6] text-white rounded-xl'> <span><i class="fa-solid fa-cart-arrow-down"></i></span> Add </button>
 
 
 </div>
@@ -176,6 +176,7 @@ const displayProductDetails = (productDetails) => {
        
         
         <div id="button-container" class="flex items-center gap-3"></div>
+        <button class='px-4 lg:px-6 cursor-pointer font-semibold py-1 bg-[#4f39f6] text-white rounded-xl'> <span><i class="fa-solid fa-cart-arrow-down"></i></span> Buy Now </button>
        </div>
      </div>
     `;
