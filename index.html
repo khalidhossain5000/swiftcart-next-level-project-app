@@ -13,15 +13,28 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-
     <!-- font awesoem setup -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Navbar start here -->
     <div class="bg-base-100 shadow-sm">
       <div class="max-w-7xl mx-auto navbar">
         <div class="navbar-start">
+          <a class="text-xl md:text-2xl font-bold text-[#4f39f6]">SwiftCar</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li class="hover:text-[#4f39f6]"><a>Home</a></li>
+            <li class="hover:text-[#4f39f6]"><a>Products</a></li>
+            <li class="hover:text-[#4f39f6]"><a>About</a></li>
+            <li class="hover:text-[#4f39f6]"><a>Contact</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
               <svg
@@ -43,32 +56,107 @@
               tabindex="-1"
               class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <li><a>Item 1</a></li>
-              <li>
-                <a>Parent</a>
-                <ul class="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-              <li><a>Item 3</a></li>
+              <li class="hover:text-[#4f39f6]"><a>Home</a></li>
+              <li class="hover:text-[#4f39f6]"><a>Products</a></li>
+              <li class="hover:text-[#4f39f6]"><a>About</a></li>
+              <li class="hover:text-[#4f39f6]"><a>Contact</a></li>
             </ul>
           </div>
-          <a class="text-xl md:text-2xl font-bold text-[#4f39f6]">SwiftCar</a>
-        </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1 ">
-            <li class="hover:text-[#4f39f6]"><a>Home</a></li>
-            <li class="hover:text-[#4f39f6]"><a>Products</a></li>
-            <li class="hover:text-[#4f39f6]"><a>About</a></li>
-            <li class="hover:text-[#4f39f6]"><a>Contact</a></li>
-          </ul>
-        </div>
-        <div class="navbar-end">
-          <a class="btn">Button</a>
+          <span class="text-2xl text-[#4f39f6]"
+            ><i class="fa-solid fa-cart-arrow-down"></i
+          ></span>
         </div>
       </div>
     </div>
     <!-- navbar ends -->
+    <!-- banner starts -->
+    <section>
+      <div
+        class="hero min-h-[90vh]"
+        style="background-image: url(./Assets/banner-image.png)"
+      >
+        <div class="hero-overlay"></div>
+        <div class="hero-content text-neutral-content text-center">
+          <div class="">
+            <h1 class="mb-5 text-5xl font-bold">Best Collection For You</h1>
+            <p class="mb-5">
+              Discover the latest trend in fashion,electronics, and more. Shop
+              with confidence and style at SwiftCart.
+            </p>
+            <button class="btn btn-primary">Shop Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose us section starts -->
+    <section class="py-12  bg-[#f9fafb]">
+      <h2
+        class="py-4 text-2xl lg:text-4xl font-bold text-center text-[#101828]"
+      >
+        Why Choose Us
+      </h2>
+      <p class="text-[#545d6f] text-center max-w-xl mx-auto pb-4">
+        We Provide the best shopping experience with top-notch services
+      </p>
+      <!-- card container -->
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 lg:gap-6 py-9 pt-22 px-3 lg:px-0"
+      >
+        <!-- card-1 -->
+        <div class="p-6 bg-[#ffffff] rounded-xl shadow-lg relative">
+          <!-- icon -->
+          <div class="bg-[#eef2ff] border-4 rounded-lg border-white inline-block py-2 lg:py-3 px-2 lg:px-5 shadow-2xl absolute -top-2/12">
+            <span class="text-[#5a46f7] text-2xl font-bold"
+              ><i class="fa-regular fa-truck"></i
+            ></span>
+          </div>
+          <!-- title -->
+          <h2 class="pt-9 text-xl font-bold text-[#192030]">Fast Delivery</h2>
+          <p class="pt-2 pb-4 text-[17px] font-semibold text-[#8f95a1]">
+            Get your orders delivered to your doorstep quickly and effeciently
+          </p>
+        </div>
+        <!-- card-2 -->
+        <div class="p-6 bg-[#ffffff] rounded-xl shadow-lg relative">
+          <!-- icon -->
+          <div class="bg-[#eef2ff] border-4 rounded-lg border-white inline-block py-2 lg:py-3 px-2 lg:px-5 shadow-2xl absolute -top-2/12">
+            <span class="text-[#5a46f7] text-2xl font-bold"
+              ><i class="fa-regular fa-headphones"></i></span>
+          </div>
+          <!-- title -->
+          <h2 class="pt-9 text-xl font-bold text-[#192030]">24/7 Support</h2>
+          <p class="pt-2 pb-4 text-[17px] font-semibold text-[#8f95a1]">
+            Our Support Team is Available around the clock to assist you
+          </p>
+        </div>
+        <!-- card-3 -->
+        <div class="p-6 bg-[#ffffff] rounded-xl shadow-lg relative">
+          <!-- icon -->
+          <div class="bg-[#eef2ff] border-4 rounded-lg border-white inline-block py-2 lg:py-3 px-2 lg:px-5  shadow-2xl absolute -top-2/12">
+            <span class="text-[#5a46f7] text-2xl font-bold"
+              ><i class="fa-solid fa-shield"></i></span>
+          </div>
+          <!-- title -->
+          <h2 class="pt-9 text-xl font-bold text-[#192030]">Secure Payment</h2>
+          <p class="pt-2 pb-4 text-[17px] font-semibold text-[#8f95a1]">
+           Experience safe and secure transactions with our encrypted payment systems
+          </p>
+        </div>
+        <!-- card-4 -->
+        <div class="p-6 bg-[#ffffff] rounded-xl shadow-lg relative">
+          <!-- icon -->
+          <div class="bg-[#eef2ff] border-4 rounded-lg border-white inline-block py-2 lg:py-3 px-2 lg:px-5  shadow-2xl absolute -top-2/12">
+            <span class="text-[#5a46f7] text-2xl font-bold"
+              ><i class="fa-solid fa-rotate"></i></span>
+          </div>
+          <!-- title -->
+          <h2 class="pt-9 text-xl font-bold text-[#192030]">Easy Return</h2>
+          <p class="pt-2 pb-4 text-[17px] font-semibold text-[#8f95a1]">
+            Not satisfied? Return your products easily within 30 days.
+          </p>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
