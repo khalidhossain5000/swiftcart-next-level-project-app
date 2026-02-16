@@ -2,12 +2,11 @@ const categoryContainer = document.getElementById("category-container");
 //loader start
 const showLoader = () => {
   document.getElementById("loader").classList.remove("hidden");
-  // document.getElementById('word-card-container').classList.add('hidden');
 };
 //hide loader
 const hideLoader = () => {
   document.getElementById("loader").classList.add("hidden");
-  // document.getElementById('word-card-container').classList.remove('hidden');
+
 };
 
 const removeActiveClass = () => {
@@ -96,14 +95,16 @@ const displayCategories = (categories) => {
   });
 };
 
+
 // display products
 
 const displayProducts = (products) => {
   const productContainer = document.getElementById("product-container");
   productContainer.innerHTML = "";
 
-  for (const product of products) {
 
+
+  for (const product of products) {
     const div = document.createElement("div");
     div.innerHTML = `
             <div class="rounded-lg border border-[#e6e8eb]  pb-6 px-3 md:px-4 xl:px-0">
@@ -184,4 +185,5 @@ const displayProductDetails = (productDetails) => {
 
 loadCategories();
 loadProducts();
+
 loadProductsByCategory("All");
