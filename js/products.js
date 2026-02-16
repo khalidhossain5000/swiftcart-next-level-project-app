@@ -59,24 +59,23 @@ const loadProductsByCategory = (category, index) => {
       displayProducts(products);
       hideLoader();
     })
-    .catch((error)=>{
-        console.log(error,'this is filter error ')
-        hideLoader();
-    })
+    .catch((error) => {
+      console.log(error, "this is filter error ");
+      hideLoader();
+    });
 };
 
 // load single product data
-const loadProductDetails=(id)=>{
-    showLoader()
-    fetch(`https://fakestoreapi.com/products/${id}`)
-    .then((res)=>res.json())
-    .then((product)=>{
-        displayProductDetails(product)
-        showLoader()
+const loadProductDetails = (id) => {
+  showLoader();
+  fetch(`https://fakestoreapi.com/products/${id}`)
+    .then((res) => res.json())
+    .then((product) => {
+      displayProductDetails(product);
+      showLoader();
     })
-    .catch((err)=>console.log(err,'single product error here'))
-
-}
+    .catch((err) => console.log(err, "single product error here"));
+};
 
 // display cat
 const displayCategories = (categories) => {
@@ -104,8 +103,7 @@ const displayProducts = (products) => {
   productContainer.innerHTML = "";
 
   for (const product of products) {
-    
-    console.log(product,'this is producst')
+    console.log(product, "this is producst");
     const div = document.createElement("div");
     div.innerHTML = `
             <div class="rounded-lg border border-[#e6e8eb]  pb-6 px-3 md:px-4 xl:px-0">
@@ -125,7 +123,7 @@ const displayProducts = (products) => {
 </div>
 
 
-                <h2 class="text-[16px] pb-3 font-semibold text-[#000010] mt-2">${product?.title?.slice(0,30)}..</h2>
+                <h2 class="text-[16px] pb-3 font-semibold text-[#000010] mt-2">${product?.title?.slice(0, 30)}..</h2>
                 <p class="text-[#101840] font-bold text-[18px]">$${product?.price}</p>
                 </div>
                 
@@ -150,38 +148,38 @@ const displayProducts = (products) => {
   }
 };
 
-
-
 // product details modal here code
 
+const displayProductDetails = (productDetails) => {
+  console.log(productDetails, "productDetails");
 
-const displayProductDetails=(productDetails)=>{
-    console.log(productDetails,'productDetails')
-
-    document.getElementById("product_details_modal").showModal();
-    const modalContainer=document.getElementById('modal-container');
-    modalContainer.innerHTML=`
+  document.getElementById("product_details_modal").showModal();
+  const modalContainer = document.getElementById("modal-container");
+  modalContainer.innerHTML = `
      <!-- modal container  -->
      <div class="bg-white py-8">
       <!-- modal insides  -->
-       <div class="bg-white border-3 border-[#EDF7FF] p-6 space-y-6 w-full" >
-        <h2 class="text-4xl font-semibold text-black">${productDetails.title}(<i class="fa-solid fa-microphone-lines"></i> : ${productDetails.description})</h2>
-        <h3 class="text-2xl font-semibold text-black">Meaning:</h3>
-        <h2 class="text-2xl font-semibold text-black">Example:</h2>
-        <p  class="text-2xl font-normal text-[#000000]">${productDetails.category}</p>
-        <h2 class="hind-siliguri text-2xl font-medium text-black">সমার্থক শব্দ গুলো:</h2>
+       <div class="bg-gray-200 border-3 border-[#EDF7FF] p-6 space-y-6 w-full" >
+
+
+       <div class='bg-[#f8f8f8] rounded-lg shadow-lg shadow-blue-100 py-9'><img src="${productDetails.image}" class="h-40 xl:h-56 mx-auto" alt="${productDetails.title}" /></div>
+
+
+        <h2 class="text-4xl font-semibold text-black">Product Name: <span class="text-2xl">${productDetails.title}</span></h2>
+
+<p class="text-3xl font-semibold text-slate-900">Description: <span class="text-xl">${productDetails.description}</span></p>
+
+        <h3 class="text-2xl font-semibold text-black">Category:${productDetails.category}</h3>
+        <h2 class="text-2xl font-semibold text-black">Price:$ ${productDetails.price}</h2>
+        <p  class="text-2xl font-normal text-[#000000]">Ratings:${productDetails.rating.rate}</p>
+        <p  class="text-2xl font-normal text-[#000000]">Ratings Count:${productDetails.rating.count}</p>
+       
         
         <div id="button-container" class="flex items-center gap-3"></div>
        </div>
      </div>
-    `
-}
-
-
-
-
-
-
+    `;
+};
 
 loadCategories();
 loadProducts();
