@@ -72,7 +72,7 @@ const loadProductDetails = (id) => {
     .then((res) => res.json())
     .then((product) => {
       displayProductDetails(product);
-      showLoader();
+      hideLoader();
     })
     .catch((err) => console.log(err, "single product error here"));
 };
