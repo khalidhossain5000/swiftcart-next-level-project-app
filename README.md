@@ -16,4 +16,9 @@
 
 ## What is the significance of async/await in fetching API data?
 
+#### Ans: async/await javascript এ asynchronous operation সহজ ও readable করার জন্য use করা হয়। এটি asynchronous task যেমন data fetch etc কাজকে synchoronous ভাবে javascript execute করতে পারে। async function and await use করে একটা promise resolve না পর্যন্ত অপেক্ষা করতে পারি ফলে data fetch,post etc করতে অনেক সহজ হয় এবং error handling সহজ হয়। সংক্ষেপে, এটি asynchronous কাজকে readable, predictable এবং cleaner করে।
+
+
+## Explain the concept of Scope in JavaScript (Global, Function, Block).
+
 #### Ans: 
