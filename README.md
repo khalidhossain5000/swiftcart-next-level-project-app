@@ -12,4 +12,8 @@
 
 ## What is the difference between == and ===?
 
+#### Ans: ==  হলো equality অপারেটর যা মান/Value তুলনা করে কিন্তু ডেটা টাইপ ভিন্ন হলে টাইপ রূপান্তর করে,অর্থাৎ এটি শুধু মান check করে data type check করে না। অন্যদিকে, === হলো strict equality অপারেটর যা মান এবং ডেটা টাইপ উভয়ই পরীক্ষা করে। 
+
+## What is the significance of async/await in fetching API data?
+
 #### Ans: 
