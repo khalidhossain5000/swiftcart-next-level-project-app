@@ -10,7 +10,7 @@
 #### Ans: map() function হলো একটা array method , যেটা একটা existing array এর উপর কাজ করে সবসময় একটা নতুন array return করে ,এটা মুল array এর কোনো পরিবর্তন করে না।
 #### অন্যদিকে, forEach() কোনো value return করে না। এটি existing array-এর উপরে operation চালানোর জন্য ব্যবহার করা হয়, কিন্তু কোনো নতুন array তৈরি করে না। আর এই দিক থেকেই map() forEach() থেকে আলাদা। 
 
-## What is the difference between == and ===?
+## 3.What is the difference between == and ===?
 
 #### Ans: ==  হলো equality অপারেটর যা মান/Value তুলনা করে কিন্তু ডেটা টাইপ ভিন্ন হলে টাইপ রূপান্তর করে,অর্থাৎ এটি শুধু মান check করে data type check করে না। অন্যদিকে, === হলো strict equality অপারেটর যা মান এবং ডেটা টাইপ উভয়ই পরীক্ষা করে। 
 
