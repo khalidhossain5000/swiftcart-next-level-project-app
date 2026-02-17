@@ -5,7 +5,7 @@
 #### অন্যদিকে, null হলো একটি intentional empty value, যা developer ইচ্ছাকৃতভাবে assign করে বোঝাতে যে বর্তমানে এখানে কোনো মান নেই  তবে ভবিষ্যতে প্রয়োজন অনুযায়ী এখানে মান প্রদান করা হতে পারে।।
 
 
-## What is the use of the map() function in JavaScript? How is it different from forEach()?
+## 2.What is the use of the map() function in JavaScript? How is it different from forEach()?
 
 #### Ans: map() function হলো একটা array method , যেটা একটা existing array এর উপর কাজ করে সবসময় একটা নতুন array return করে ,এটা মুল array এর কোনো পরিবর্তন করে না।
 #### অন্যদিকে, forEach() কোনো value return করে না। এটি existing array-এর উপরে operation চালানোর জন্য ব্যবহার করা হয়, কিন্তু কোনো নতুন array তৈরি করে না। আর এই দিক থেকেই map() forEach() থেকে আলাদা। 
