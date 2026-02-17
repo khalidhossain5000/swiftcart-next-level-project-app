@@ -8,12 +8,11 @@ const hideLoader = () => {
 
 // load trending products for home page
 const loadTrendingProducts = () => {
-  console.log("hello form tload trensind data here");
   showLoader();
   fetch("https://fakestoreapi.com/products")
     .then((res) => res.json())
     .then((products) => {
-      console.log(products, "trendingProductstrendingProducts");
+      
       const trendingProducts = products
         .sort((a, b) => b.rating.rate - a.rating.rate)
         .slice(0, 3);
