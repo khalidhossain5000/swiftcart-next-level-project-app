@@ -14,7 +14,7 @@
 
 #### Ans: ==  হলো equality অপারেটর যা মান/Value তুলনা করে কিন্তু ডেটা টাইপ ভিন্ন হলে টাইপ রূপান্তর করে,অর্থাৎ এটি শুধু মান check করে data type check করে না। অন্যদিকে, === হলো strict equality অপারেটর যা মান এবং ডেটা টাইপ উভয়ই পরীক্ষা করে। 
 
-## What is the significance of async/await in fetching API data?
+## 4.What is the significance of async/await in fetching API data?
 
 #### Ans: async/await javascript এ asynchronous operation সহজ ও readable করার জন্য use করা হয়। এটি asynchronous task যেমন data fetch বা API request-কে synchronous-এর মতো লেখা সম্ভব করে, যাতে code পড়তে এবং বুঝতে সহজ হয়।async function-এর মধ্যে await ব্যবহার করলে, একটি promise resolve না হওয়া পর্যন্ত execution অপেক্ষা করে, ফলে data fetching, posting বা অন্য asynchronous কাজগুলো সহজভাবে handle করা যায়। সংক্ষেপে, এটি asynchronous কাজকে readable, predictable এবং cleaner করে তোলে।
 
