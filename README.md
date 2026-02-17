@@ -21,4 +21,5 @@
 
 ## Explain the concept of Scope in JavaScript (Global, Function, Block).
 
-#### Ans: 
+#### Ans: Scope হলো একটা environment বা place যেটার উপর নির্ভর করে একটা variable বা function কে কোথা থেকে access করা যাবে। Global Scope: যখন কোন variable কে কোনো ফাংশন বা ব্লকের বাইরে ডিক্লেয়ার করা হয়, সেটি হল গ্লোবাল স্কোপ । Function Scope:  যখন কোন variable কে কোনো ফাংশন এর ভেতর এ declare করা হয় তখন এই ভেরিয়েবল শুধুমাত্র এই  ফাংশনের ভেতর থেকে access করা যায় ,এটি হল function Scope। Block Scope: in es6 এ let const আসার পর এই scope পরিচিতি পাই , যখন কোন curly braces {.....} জেমনঃ(if,for etc) এর মাঝে varibale declare করা হয় তখন সেটিকে শুধু সেই ওই ব্লকের ভেতর হতেই access করা যায় এটি হল block Scope.
+ 
