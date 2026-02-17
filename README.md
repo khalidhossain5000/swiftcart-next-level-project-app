@@ -1,5 +1,5 @@
 
-## What is the difference between null and undefined?
+## 1.What is the difference between null and undefined?
 
 #### Ans: Undefined মানে হলো একটা variable declare করা হয়েছে কিন্ত এখানে এখনো কোনো মান বা value assign নাই অর্থাৎ variable বিদ্যমান, কিন্তু তার মান নির্ধারিত নয় এটা javascript নিজেই automatically প্রদান করে। 
 #### অন্যদিকে, null হলো একটি intentional empty value, যা developer ইচ্ছাকৃতভাবে assign করে বোঝাতে যে বর্তমানে এখানে কোনো মান নেই  তবে ভবিষ্যতে প্রয়োজন অনুযায়ী এখানে মান প্রদান করা হতে পারে।।
